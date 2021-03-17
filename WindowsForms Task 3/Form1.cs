@@ -389,7 +389,12 @@ namespace WindowsForms_Task_3
             #endregion
 
             if (BPTotalPayLbl.Text != "0")
-                WriteDepartmentToPdfFile();
+                {
+                    if (!Directory.Exists("DataBase"))
+                         Directory.CreateDirectory("DataBase");
+                    
+                    WriteDepartmentToPdfFile();
+                }
 
             MessageBox.Show("Good Day", "Department of BP");
             ReturnDefaultValues();
